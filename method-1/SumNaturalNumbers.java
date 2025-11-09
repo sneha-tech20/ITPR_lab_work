@@ -19,4 +19,3 @@ public class SumNaturalNumbers {
         System.out.println("Sum of first " + n + " natural numbers is: " + sum);
     }
 }
-44
