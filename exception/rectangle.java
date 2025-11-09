@@ -1,4 +1,4 @@
-package exception;
+
 class InvalidDimensionException extends Exception {
     public InvalidDimensionException(String message) {
         super(message);
@@ -10,7 +10,7 @@ public class rectangle {
     private double breadth;
 
     // Constructor with validation
-    public Rectangle(double length, double breadth) throws InvalidDimensionException {
+    public rectangle(double length, double breadth) throws InvalidDimensionException {
         if (length <= 0 || breadth <= 0) {
             throw new InvalidDimensionException("Length and breadth must be positive values!");
         }
@@ -32,12 +32,12 @@ public class rectangle {
     public static void main(String[] args) {
         try {
             // Creating a valid rectangle
-            Rectangle r1 = new Rectangle(5, 3);
+            rectangle r1 = new rectangle(5, 3);
             System.out.println("Area: " + r1.area());
             System.out.println("Perimeter: " + r1.perimeter());
 
             // Creating an invalid rectangle to trigger exception
-            Rectangle r2 = new Rectangle(-4, 6);
+            rectangle r2 = new rectangle(-4, 6);
             System.out.println("Area: " + r2.area());
         } 
         catch (InvalidDimensionException e) {
