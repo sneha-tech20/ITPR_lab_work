@@ -1,1 +1,28 @@
+package com.knmodi.collage;
+
+import com.knmodi.collage.dao.Impl.coursedaoImpl;
+import com.knmodi.collage.model.course;
+import com.knmodi.collage.util.DataBaseUtil;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	//to create tables if not exists
+    	DataBaseUtil.createTables();
+    	
+    	course course1 = new course("course102", "ITPR", "Introduction to java programming", 120, 20, 70);
+    	coursedaoImpl cdi = new coursedaoImpl();
+    	int rows = cdi.save(course1);
+    	
+    	if(rows > 0)
+    	{
+    		System.out.println("Data inserted");
+    	}
+    	else
+    	{
+    		System.out.println("Unable to insert data");
+    	}
+    }
+}
 
